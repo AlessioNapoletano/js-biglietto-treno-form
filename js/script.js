@@ -30,20 +30,23 @@ button.addEventListener('click', function () {
     const age = parseInt(inputAgeElement.value);
     const kilometres = parseInt(inputKilometresElement.value);
 
-    console.log(age);
-    console.log(kilometres);
+    const priceKm = 0.2762;
+    let priceTicket;
+    let PriceTicketFixed;
 
-    //Prezzo biglietto
-    const priceTicket = 0.2762;
-    let tot;
-    let price;
-
-
-    tot = priceTicket * kilometres;
-    price = tot.toFixed(2);
-
-    console.log("il prezzo del biglietto è: " + price);
-
+    if(age<18){
+        priceTicket = (priceKm * kilometres) * 0.175;
+        priceTicketFixed = priceTicket.toFixed(2);
+        console.log("Il cliente è minorenne ed il prezzo del biglietto è: " + priceTicketFixed);
+    } else if(age>=65){
+        priceTicket = (priceKm * kilometres) * 0.333;
+        priceTicketFixed = priceTicket.toFixed(2);
+        console.log("Il cliente è over 65 ed il prezzo del biglietto è: " + priceTicketFixed);
+    } else{
+        priceTicket = priceKm * kilometres;
+        priceTicketFixed = priceTicket.toFixed(2);
+        console.log("Per il cliente non è prevista una scontistica, il prezzo è: " + priceTicketFixed);
+    }
 
 
 });
