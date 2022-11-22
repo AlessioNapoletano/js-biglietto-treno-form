@@ -30,7 +30,7 @@ button.addEventListener('click', function () {
     const age = parseInt(inputAgeElement.value);
     const kilometres = parseInt(inputKilometresElement.value);
 
-    const priceKm = 0.2762 ;
+    const priceKm = 0.2762;
     let priceTicket = priceKm * kilometres;
     let PriceTicketFixed;
 
